@@ -28,6 +28,7 @@ export default function HomePage() {
   const customNavItems = [
     { label: "Dokumentasi", href: "/docs" },
     { label: "Tutorial", href: "/tutorial" },
+    { label: "Blog", href: "/blog" },
     { label: "Tentang", href: "/about" }, // Updated navigation link to point to /about
   ]
 
@@ -523,7 +524,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link
-                    href="/docs"
+                    href="/docs#faq"
                     className="transition-colors hover:text-[#ff6a00]"
                     style={{
                       color: theme === "light" ? "var(--text-200)" : "var(--text-200)",
@@ -534,7 +535,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link
-                    href="/docs"
+                    href="/blog"
                     className="transition-colors hover:text-[#ff6a00]"
                     style={{
                       color: theme === "light" ? "var(--text-200)" : "var(--text-200)",

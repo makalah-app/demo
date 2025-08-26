@@ -22,6 +22,8 @@ export default function DokumentasiPage() {
       const hash = window.location.hash.replace("#", "")
       if (hash === "privacy-policy") {
         setActiveSection("privacy-policy")
+      } else if (hash === "faq") {
+        setActiveSection("faq")
       }
     }
 
@@ -67,6 +69,7 @@ export default function DokumentasiPage() {
         { id: "7-phases", label: "7 Fase Penulisan", icon: Book },
         { id: "best-practices", label: "Best Practices", icon: Zap },
         { id: "troubleshooting", label: "Troubleshooting", icon: HelpCircle },
+        { id: "faq", label: "FAQ", icon: HelpCircle },
         { id: "privacy-policy", label: "Kebijakan Privasi", icon: FileText },
       ],
     },
@@ -399,6 +402,180 @@ export default function DokumentasiPage() {
                   Kebijakan ini dapat berubah sewaktu-waktu. Perubahan akan diberitahukan melalui email atau notifikasi
                   platform.
                 </p>
+              </div>
+            </div>
+          </div>
+        )
+
+      case "faq":
+        return (
+          <div className="space-y-8">
+            <div>
+              <div className="text-sm text-gray-400 mb-2">Panduan Lanjutan</div>
+              <h1 className="text-4xl font-bold mb-4" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                FAQ (Pertanyaan yang Sering Diajukan)
+              </h1>
+              <p className="text-lg mb-8" style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                Temukan jawaban atas pertanyaan yang paling sering diajukan tentang Makalah AI
+              </p>
+            </div>
+
+            <div className="prose prose-invert max-w-none space-y-6">
+              {/* Pertanyaan Umum */}
+              <div
+                className="p-6 border-l-4"
+                style={{
+                  backgroundColor: theme === "light" ? "#f8fafc" : "#111824",
+                  borderColor: "var(--accent-500)",
+                }}
+              >
+                <h3 className="text-xl font-bold mb-4" style={{ color: "var(--accent-500)" }}>
+                  Pertanyaan Umum
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Apa itu Makalah AI?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Makalah AI adalah platform kolaborasi penulisan makalah akademik berbasis AI yang memandu Anda melalui 7 fase terstruktur untuk menghasilkan karya akademik berkualitas tinggi.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Apakah Makalah AI gratis untuk digunakan?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Ya, Makalah AI menyediakan akses gratis untuk fitur-fitur dasar. Kami juga menyediakan paket premium dengan fitur-fitur lanjutan untuk kebutuhan penelitian yang lebih kompleks.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Bahasa apa saja yang didukung?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Saat ini, Makalah AI mendukung bahasa Indonesia dan Bahasa Inggris. Kami sedang mengembangkan dukungan untuk bahasa-bahasa lainnya.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fitur dan Penggunaan */}
+              <div
+                className="p-6 border-l-4"
+                style={{
+                  backgroundColor: theme === "light" ? "#f8fafc" : "#111824",
+                  borderColor: "#10b981",
+                }}
+              >
+                <h3 className="text-xl font-bold mb-4" style={{ color: "#10b981" }}>
+                  Fitur dan Penggunaan
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Bagaimana cara memulai menggunakan Makalah AI?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Mulai dengan membuat akun, kemudian ikuti panduan cepat di dashboard. Anda dapat langsung memulai chat dengan AI agent untuk mendapatkan panduan penulisan.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Apa itu 7 Fase Penulisan?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      7 Fase Penulisan adalah metodologi sistematis yang kami kembangkan: Perencanaan Topic, Riset Literatur, Kerangka Teoritis, Metodologi, Analisis Data, Diskusi Hasil, dan Kesimpulan & Rekomendasi.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Bisakah saya berkolaborasi dengan peneliti lain?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Ya, fitur kolaborasi real-time memungkinkan Anda bekerja sama dengan tim peneliti lain, memberikan feedback, dan melakukan review bersama.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Teknis dan Keamanan */}
+              <div
+                className="p-6 border-l-4"
+                style={{
+                  backgroundColor: theme === "light" ? "#f8fafc" : "#111824",
+                  borderColor: "#3b82f6",
+                }}
+              >
+                <h3 className="text-xl font-bold mb-4" style={{ color: "#3b82f6" }}>
+                  Teknis dan Keamanan
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Apakah data saya aman?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Ya, kami menggunakan enkripsi end-to-end dan mematuhi standar keamanan internasional. Data Anda tidak akan dibagikan kepada pihak ketiga tanpa persetujuan eksplisit.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Bagaimana jika saya mengalami masalah teknis?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Anda dapat mengakses halaman Troubleshooting di dokumentasi ini, atau menghubungi tim support kami melalui chat support atau email.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2" style={{ color: theme === "light" ? "#0f172a" : "#e6edf5" }}>
+                      Apakah ada batasan ukuran dokumen?
+                    </h4>
+                    <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                      Akun gratis memiliki batas 10MB per dokumen dan 100MB total storage. Akun premium memiliki batas yang lebih tinggi sesuai paket yang dipilih.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bantuan Lebih Lanjut */}
+              <div
+                className="p-6 border-l-4"
+                style={{
+                  backgroundColor: theme === "light" ? "#f8fafc" : "#111824",
+                  borderColor: "#8b5cf6",
+                }}
+              >
+                <h3 className="text-xl font-bold mb-4" style={{ color: "#8b5cf6" }}>
+                  Bantuan Lebih Lanjut
+                </h3>
+                <p style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
+                  Jika pertanyaan Anda tidak terjawab di sini, silakan hubungi tim support kami atau kunjungi halaman Tutorial untuk panduan langkah demi langkah.
+                </p>
+                <div className="flex gap-4 mt-4">
+                  <Button
+                    className="bg-accent-500 hover:bg-accent-600 text-white"
+                    onClick={() => window.location.href = "/tutorial"}
+                  >
+                    Lihat Tutorial
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white"
+                    onClick={() => window.location.href = "/chat"}
+                  >
+                    Chat Support
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

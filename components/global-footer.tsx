@@ -115,7 +115,7 @@ export default function GlobalFooter({ showFullFooter = false }: GlobalFooterPro
                 </li>
                 <li>
                   <Link
-                    href="/about"
+                    href="/blog"
                     className="hover:text-[#e6edf5] transition-colors"
                     style={{
                       color: theme === "light" ? "#64748b" : "#8fa1b8",
