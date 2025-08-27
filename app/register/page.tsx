@@ -64,7 +64,7 @@ export default function RegisterPage() {
       <div className="flex items-center justify-center min-h-[calc(100vh-64px)] px-6 py-12">
         <div className="w-full max-w-md">
           <Card
-            className="rounded-none p-8 border"
+            className="rounded-[3px] p-8 border"
             style={{
               backgroundColor: theme === "light" ? "var(--bg-850)" : "var(--bg-850)",
               borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -103,7 +103,7 @@ export default function RegisterPage() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Masukkan nama lengkap"
-                    className="rounded-none pl-10 border"
+                    className="rounded-[3px] pl-10 border"
                     style={{
                       backgroundColor: theme === "light" ? "var(--bg-800)" : "var(--bg-800)",
                       borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -134,7 +134,7 @@ export default function RegisterPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="nama@email.com"
-                    className="rounded-none pl-10 border"
+                    className="rounded-[3px] pl-10 border"
                     style={{
                       backgroundColor: theme === "light" ? "var(--bg-800)" : "var(--bg-800)",
                       borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -165,7 +165,7 @@ export default function RegisterPage() {
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="Minimal 8 karakter"
-                    className="rounded-none pl-10 pr-10 border"
+                    className="rounded-[3px] pl-10 pr-10 border"
                     style={{
                       backgroundColor: theme === "light" ? "var(--bg-800)" : "var(--bg-800)",
                       borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -214,7 +214,7 @@ export default function RegisterPage() {
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
                     placeholder="Ulangi password"
-                    className="rounded-none pl-10 pr-10 border"
+                    className="rounded-[3px] pl-10 pr-10 border"
                     style={{
                       backgroundColor: theme === "light" ? "var(--bg-800)" : "var(--bg-800)",
                       borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -245,7 +245,7 @@ export default function RegisterPage() {
               <div className="flex items-start space-x-2 text-sm">
                 <input
                   type="checkbox"
-                  className="rounded-none border mt-1"
+                  className="rounded-[3px] border mt-1"
                   style={{
                     accentColor: "var(--accent-500)",
                   }}
@@ -265,7 +265,7 @@ export default function RegisterPage() {
 
               <Button
                 type="submit"
-                className="rounded-none w-full text-white font-medium py-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                className="rounded-[3px] w-full text-white font-medium py-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
                 style={{
                   backgroundColor: "var(--accent-500)",
                   background: "linear-gradient(135deg, var(--accent-400), var(--accent-600))",

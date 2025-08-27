@@ -57,7 +57,7 @@ export default function LoginPage() {
       <div className="flex items-center justify-center min-h-[calc(100vh-64px)] px-6 py-12">
         <div className="w-full max-w-md">
           <Card
-            className="rounded-none p-8 border"
+            className="rounded-[3px] p-8 border"
             style={{
               backgroundColor: theme === "light" ? "var(--bg-850)" : "var(--bg-850)",
               borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -96,7 +96,7 @@ export default function LoginPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="nama@email.com"
-                    className="rounded-none pl-10 border"
+                    className="rounded-[3px] pl-10 border"
                     style={{
                       backgroundColor: theme === "light" ? "var(--bg-800)" : "var(--bg-800)",
                       borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -127,7 +127,7 @@ export default function LoginPage() {
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="Masukkan password"
-                    className="rounded-none pl-10 pr-10 border"
+                    className="rounded-[3px] pl-10 pr-10 border"
                     style={{
                       backgroundColor: theme === "light" ? "var(--bg-800)" : "var(--bg-800)",
                       borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -159,7 +159,7 @@ export default function LoginPage() {
                 <label className="flex items-center space-x-2">
                   <input
                     type="checkbox"
-                    className="rounded-none border"
+                    className="rounded-[3px] border"
                     style={{
                       accentColor: "var(--accent-500)",
                     }}
@@ -173,7 +173,7 @@ export default function LoginPage() {
 
               <Button
                 type="submit"
-                className="rounded-none w-full text-white font-medium py-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                className="rounded-[3px] w-full text-white font-medium py-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
                 style={{
                   backgroundColor: "var(--accent-500)",
                   background: "linear-gradient(135deg, var(--accent-400), var(--accent-600))",

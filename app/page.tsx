@@ -78,7 +78,7 @@ export default function HomePage() {
           <div className="flex justify-center">
             <Link href="/chat">
               <Button
-                className="rounded-none text-white font-medium px-8 py-4 text-lg transition-all hover:-translate-y-1 hover:scale-105"
+                className="rounded-[3px] text-white font-medium px-8 py-4 text-lg transition-all hover:-translate-y-1 hover:scale-105"
                 style={{
                   backgroundColor: "var(--accent-500)",
                   background: "linear-gradient(135deg, var(--accent-400), var(--accent-600))",
@@ -133,7 +133,7 @@ export default function HomePage() {
                     <div className="w-3 h-3" style={{ backgroundColor: "var(--success-500)" }}></div>
                   </div>
                   <Badge
-                    className="rounded-none text-white text-xs font-medium px-3 py-1"
+                    className="rounded-[3px] text-white text-xs font-medium px-3 py-1"
                     style={{ backgroundColor: "var(--accent-500)" }}
                   >
                     Fase 1/7: Klarifikasi Topik
@@ -167,7 +167,7 @@ export default function HomePage() {
                   <div className="flex space-x-3">
                     <Button
                       size="sm"
-                      className="rounded-none text-white font-medium"
+                      className="rounded-[3px] text-white font-medium"
                       style={{ backgroundColor: "var(--success-500)" }}
                     >
                       <CheckCircle className="w-4 h-4 mr-2" />
@@ -175,7 +175,7 @@ export default function HomePage() {
                     </Button>
                     <Button
                       size="sm"
-                      className="rounded-none bg-transparent border font-medium transition-colors"
+                      className="rounded-[3px] bg-transparent border font-medium transition-colors"
                       style={{
                         borderColor: "var(--warning-500)",
                         color: "var(--warning-500)",
@@ -237,7 +237,7 @@ export default function HomePage() {
             color: theme === "light" ? "#0f172a" : "#e6edf5",
           }}
         >
-          AI yang akan <span className="text-[#ff6a00] font-bold">bekerja dengan Anda</span>,
+          AI sebagai <span className="text-[#ff6a00] font-bold">kawan berpikir dan diskusi</span>,
         </h2>
         <h2
           className="text-4xl md:text-5xl font-black mb-16 leading-tight"
@@ -254,12 +254,12 @@ export default function HomePage() {
             color: theme === "light" ? "#334155" : "#b7c3d4",
           }}
         >
-          MAKALAH AI hadir dengan <span className="text-[#ff6a00] font-bold">alur SOLC</span>
+          MAKALAH AI hadir dengan <span className="text-[#ff6a00] font-bold">penggunaan metode structured outline learning cycle</span>
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <Card
-            className="rounded-none bg-gradient-to-b from-[#111824] to-[#0e141b] border-[#2a3a4f] p-8 transition-all hover:-translate-y-1"
+            className="rounded-[3px] bg-gradient-to-b from-[#111824] to-[#0e141b] border-[#2a3a4f] p-8 transition-all hover:-translate-y-1"
             style={{
               background:
                 theme === "light"
@@ -296,7 +296,7 @@ export default function HomePage() {
           </Card>
 
           <Card
-            className="rounded-none bg-gradient-to-b from-[#111824] to-[#0e141b] border-[#2a3a4f] p-8 transition-all hover:-translate-y-1"
+            className="rounded-[3px] bg-gradient-to-b from-[#111824] to-[#0e141b] border-[#2a3a4f] p-8 transition-all hover:-translate-y-1"
             style={{
               background:
                 theme === "light"
@@ -333,7 +333,7 @@ export default function HomePage() {
           </Card>
 
           <Card
-            className="rounded-none bg-gradient-to-b from-[#111824] to-[#0e141b] border-[#2a3a4f] p-8 transition-all hover:-translate-y-1"
+            className="rounded-[3px] bg-gradient-to-b from-[#111824] to-[#0e141b] border-[#2a3a4f] p-8 transition-all hover:-translate-y-1"
             style={{
               background:
                 theme === "light"
@@ -393,7 +393,7 @@ export default function HomePage() {
           <div className="flex justify-center mb-12">
             <Link href="/tutorial">
               <Button
-                className="rounded-none text-white font-medium px-8 py-4 text-lg transition-all hover:-translate-y-1 hover:scale-105 border-2"
+                className="rounded-[3px] text-white font-medium px-8 py-4 text-lg transition-all hover:-translate-y-1 hover:scale-105 border-2"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "var(--accent-500)",

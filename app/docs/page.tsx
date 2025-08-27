@@ -128,7 +128,7 @@ export default function DokumentasiPage() {
 
               <div className="grid md:grid-cols-2 gap-6 my-8">
                 <div
-                  className="p-6 border rounded-none"
+                  className="p-6 border rounded-[3px]"
                   style={{
                     backgroundColor: theme === "light" ? "#ffffff" : "#1b2838",
                     borderColor: theme === "light" ? "#d7dee7" : "#33465f",
@@ -142,7 +142,7 @@ export default function DokumentasiPage() {
                     Mulai menulis makalah pertama Anda dalam 5 menit dengan panduan langkah demi langkah.
                   </p>
                   <Button
-                    className="mt-4 text-sm rounded-none"
+                    className="mt-4 text-sm rounded-[3px]"
                     style={{ backgroundColor: "var(--accent-500)", color: "white" }}
                     onClick={() => setActiveSection("quickstart")}
                   >
@@ -151,7 +151,7 @@ export default function DokumentasiPage() {
                 </div>
 
                 <div
-                  className="p-6 border rounded-none"
+                  className="p-6 border rounded-[3px]"
                   style={{
                     backgroundColor: theme === "light" ? "#ffffff" : "#1b2838",
                     borderColor: theme === "light" ? "#d7dee7" : "#33465f",
@@ -162,10 +162,10 @@ export default function DokumentasiPage() {
                     7 Fase Penulisan
                   </h3>
                   <p className="text-sm" style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
-                    Pelajari metodologi SOLC yang telah terbukti efektif untuk penulisan akademik.
+                    Pelajari penggunaan metode structured outline learning cycle yang telah terbukti efektif untuk penulisan akademik.
                   </p>
                   <Button
-                    className="mt-4 text-sm rounded-none"
+                    className="mt-4 text-sm rounded-[3px]"
                     style={{ backgroundColor: "var(--accent-500)", color: "white" }}
                     onClick={() => setActiveSection("7-phases")}
                   >
@@ -251,7 +251,7 @@ export default function DokumentasiPage() {
                 7 Fase Penulisan
               </h1>
               <p className="text-lg mb-8" style={{ color: theme === "light" ? "#64748b" : "#b7c3d4" }}>
-                Metodologi SOLC yang sistematis untuk menghasilkan makalah akademik berkualitas tinggi
+                Penggunaan metode structured outline learning cycle yang sistematis untuk menghasilkan makalah akademik berkualitas tinggi
               </p>
             </div>
 
@@ -271,7 +271,7 @@ export default function DokumentasiPage() {
               ].map((item) => (
                 <div
                   key={item.phase}
-                  className="p-6 border rounded-none"
+                  className="p-6 border rounded-[3px]"
                   style={{
                     backgroundColor: theme === "light" ? "#ffffff" : "#1b2838",
                     borderColor: theme === "light" ? "#d7dee7" : "#33465f",
@@ -279,7 +279,7 @@ export default function DokumentasiPage() {
                 >
                   <div className="flex items-center mb-4">
                     <div
-                      className="w-8 h-8 rounded-none flex items-center justify-center text-white font-bold mr-4"
+                      className="w-8 h-8 rounded-[3px] flex items-center justify-center text-white font-bold mr-4"
                       style={{ backgroundColor: "var(--accent-500)" }}
                     >
                       {item.phase}
@@ -622,7 +622,7 @@ export default function DokumentasiPage() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 placeholder="Cari dokumentasi..."
-                className="pl-10 bg-transparent border rounded-none"
+                className="pl-10 bg-transparent border rounded-[3px]"
                 style={{
                   borderColor: theme === "light" ? "#d7dee7" : "#33465f",
                   color: theme === "light" ? "#0f172a" : "#e6edf5",

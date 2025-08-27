@@ -62,7 +62,7 @@ export default function SettingsPage() {
 
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
           {/* Profile Settings Card */}
-          <Card className="rounded-none border-var-line bg-var-background-secondary">
+          <Card className="rounded-[3px] border-var-line bg-var-background-secondary">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-var-text">
                 <User className="h-5 w-5 text-var-accent" />
@@ -83,7 +83,7 @@ export default function SettingsPage() {
                       type="text"
                       value={profileData.name}
                       onChange={(e) => setProfileData({ ...profileData, name: e.target.value })}
-                      className="pl-10 rounded-none border-var-line bg-var-background text-var-text focus:border-var-accent"
+                      className="pl-10 rounded-[3px] border-var-line bg-var-background text-var-text focus:border-var-accent"
                       placeholder="Masukkan nama lengkap"
                     />
                   </div>
@@ -100,7 +100,7 @@ export default function SettingsPage() {
                       type="email"
                       value={profileData.email}
                       onChange={(e) => setProfileData({ ...profileData, email: e.target.value })}
-                      className="pl-10 rounded-none border-var-line bg-var-background text-var-text focus:border-var-accent"
+                      className="pl-10 rounded-[3px] border-var-line bg-var-background text-var-text focus:border-var-accent"
                       placeholder="Masukkan email"
                     />
                   </div>
@@ -117,7 +117,7 @@ export default function SettingsPage() {
                       type="text"
                       value={profileData.role}
                       onChange={(e) => setProfileData({ ...profileData, role: e.target.value })}
-                      className="pl-10 rounded-none border-var-line bg-var-background text-var-text focus:border-var-accent"
+                      className="pl-10 rounded-[3px] border-var-line bg-var-background text-var-text focus:border-var-accent"
                       placeholder="Masukkan peran"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function SettingsPage() {
 
                 <Button
                   type="submit"
-                  className="w-full rounded-none bg-var-accent hover:bg-var-accent-hover text-white font-medium"
+                  className="w-full rounded-[3px] bg-var-accent hover:bg-var-accent-hover text-white font-medium"
                 >
                   <Save className="h-4 w-4 mr-2" />
                   Simpan Perubahan
@@ -135,7 +135,7 @@ export default function SettingsPage() {
           </Card>
 
           {/* Password Settings Card */}
-          <Card className="rounded-none border-var-line bg-var-background-secondary">
+          <Card className="rounded-[3px] border-var-line bg-var-background-secondary">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-var-text">
                 <Lock className="h-5 w-5 text-var-accent" />
@@ -158,7 +158,7 @@ export default function SettingsPage() {
                       type={showCurrentPassword ? "text" : "password"}
                       value={passwordData.currentPassword}
                       onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })}
-                      className="pl-10 pr-10 rounded-none border-var-line bg-var-background text-var-text focus:border-var-accent"
+                      className="pl-10 pr-10 rounded-[3px] border-var-line bg-var-background text-var-text focus:border-var-accent"
                       placeholder="Masukkan password saat ini"
                     />
                     <button
@@ -184,7 +184,7 @@ export default function SettingsPage() {
                       type={showNewPassword ? "text" : "password"}
                       value={passwordData.newPassword}
                       onChange={(e) => setPasswordData({ ...passwordData, newPassword: e.target.value })}
-                      className="pl-10 pr-10 rounded-none border-var-line bg-var-background text-var-text focus:border-var-accent"
+                      className="pl-10 pr-10 rounded-[3px] border-var-line bg-var-background text-var-text focus:border-var-accent"
                       placeholder="Masukkan password baru"
                     />
                     <button
@@ -208,7 +208,7 @@ export default function SettingsPage() {
                       type={showConfirmPassword ? "text" : "password"}
                       value={passwordData.confirmPassword}
                       onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })}
-                      className="pl-10 pr-10 rounded-none border-var-line bg-var-background text-var-text focus:border-var-accent"
+                      className="pl-10 pr-10 rounded-[3px] border-var-line bg-var-background text-var-text focus:border-var-accent"
                       placeholder="Konfirmasi password baru"
                     />
                     <button
@@ -221,7 +221,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
 
-                <div className="bg-var-background-tertiary border border-var-line rounded-none p-4">
+                <div className="bg-var-background-tertiary border border-var-line rounded-[3px] p-4">
                   <h4 className="text-sm font-medium text-var-text mb-2">Persyaratan Password:</h4>
                   <ul className="text-xs text-var-text-secondary space-y-1">
                     <li>• Minimal 8 karakter</li>
@@ -233,7 +233,7 @@ export default function SettingsPage() {
 
                 <Button
                   type="submit"
-                  className="w-full rounded-none bg-var-accent hover:bg-var-accent-hover text-white font-medium"
+                  className="w-full rounded-[3px] bg-var-accent hover:bg-var-accent-hover text-white font-medium"
                   disabled={!passwordData.currentPassword || !passwordData.newPassword || !passwordData.confirmPassword}
                 >
                   <Lock className="h-4 w-4 mr-2" />
@@ -245,7 +245,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Account Actions */}
-        <Card className="rounded-none border-var-line bg-var-background-secondary mt-8">
+        <Card className="rounded-[3px] border-var-line bg-var-background-secondary mt-8">
           <CardHeader>
             <CardTitle className="text-var-text">Tindakan Akun</CardTitle>
             <CardDescription className="text-var-text-secondary">Kelola pengaturan akun lanjutan</CardDescription>
@@ -254,13 +254,13 @@ export default function SettingsPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 variant="outline"
-                className="rounded-none border-var-line text-var-text hover:bg-var-background-tertiary bg-transparent"
+                className="rounded-[3px] border-var-line text-var-text hover:bg-var-background-tertiary bg-transparent"
               >
                 Ekspor Data
               </Button>
               <Button
                 variant="outline"
-                className="rounded-none border-red-500 text-red-500 hover:bg-red-500 hover:text-white bg-transparent"
+                className="rounded-[3px] border-red-500 text-red-500 hover:bg-red-500 hover:text-white bg-transparent"
               >
                 Hapus Akun
               </Button>

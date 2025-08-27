@@ -209,7 +209,7 @@ export default function TutorialPage() {
             {featuredTutorials.map((tutorial) => (
               <Card
                 key={tutorial.id}
-                className="group cursor-pointer overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 rounded-none"
+                className="group cursor-pointer overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 rounded-[3px]"
                 style={{
                   backgroundColor: theme === "light" ? "var(--bg-850)" : "var(--bg-800)",
                   borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -223,7 +223,7 @@ export default function TutorialPage() {
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all flex items-center justify-center">
                     <div
-                      className="w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform rounded-none"
+                      className="w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform rounded-[3px]"
                       style={{ backgroundColor: "var(--accent-500)" }}
                     >
                       <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
@@ -313,7 +313,7 @@ export default function TutorialPage() {
             {filteredTutorials.map((tutorial) => (
               <Card
                 key={tutorial.id}
-                className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 rounded-none"
+                className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 rounded-[3px]"
                 style={{
                   backgroundColor: theme === "light" ? "var(--bg-850)" : "var(--bg-800)",
                   borderColor: theme === "light" ? "var(--line-500)" : "var(--line-500)",
@@ -327,7 +327,7 @@ export default function TutorialPage() {
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all flex items-center justify-center">
                     <div
-                      className="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform rounded-none"
+                      className="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform rounded-[3px]"
                       style={{ backgroundColor: "var(--accent-500)" }}
                     >
                       <Play className="w-4 h-4 text-white ml-0.5" fill="currentColor" />

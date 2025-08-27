@@ -107,7 +107,7 @@ const GlobalHeader = ({ showNavigation = false, showUserProfile = false, customN
         {!showNavigation && !showUserProfile && !customNavItems && (
           <Link
             href="/login"
-            className="rounded-none text-white font-medium px-6 py-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 inline-block mr-4"
+            className="rounded-[3px] text-white font-medium px-6 py-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 inline-block mr-4"
             style={{
               backgroundColor: "var(--accent-500)",
             }}
@@ -119,7 +119,7 @@ const GlobalHeader = ({ showNavigation = false, showUserProfile = false, customN
         {(showNavigation || customNavItems) && (
           <Link
             href="/login"
-            className="rounded-none text-white font-medium px-6 py-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 inline-block mr-4"
+            className="rounded-[3px] text-white font-medium px-6 py-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 inline-block mr-4"
             style={{
               backgroundColor: "var(--accent-500)",
             }}
@@ -128,36 +128,8 @@ const GlobalHeader = ({ showNavigation = false, showUserProfile = false, customN
           </Link>
         )}
 
-        <button
-          onClick={toggleTheme}
-          className="relative inline-flex items-center justify-between w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-          style={{
-            backgroundColor: theme === "dark" ? "#1a1a1a" : "var(--accent-500)",
-          }}
-          aria-label="Toggle theme"
-        >
-          <Sun
-            className={`w-4 h-4 ml-1 transition-opacity duration-300 ${
-              theme === "light" ? "opacity-100 text-white" : "opacity-50 text-gray-400"
-            }`}
-          />
-
-          <Moon
-            className={`w-4 h-4 mr-1 transition-opacity duration-300 ${
-              theme === "dark" ? "opacity-100 text-white" : "opacity-50 text-gray-400"
-            }`}
-          />
-
-          <div
-            className="absolute w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300"
-            style={{
-              transform: theme === "dark" ? "translateX(2px)" : "translateX(34px)",
-            }}
-          />
-        </button>
-
         {showUserProfile && (
-          <div className="profile-dropdown relative">
+          <div className="profile-dropdown relative mr-4">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="chat-usercard hover:bg-opacity-80 transition-colors duration-200 cursor-pointer"
@@ -221,6 +193,35 @@ const GlobalHeader = ({ showNavigation = false, showUserProfile = false, customN
             )}
           </div>
         )}
+
+        <button
+          onClick={toggleTheme}
+          className="theme-toggle relative inline-flex items-center justify-between w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+          data-theme={theme}
+          style={{
+            backgroundColor: theme === "dark" ? "#1a1a1a" : "var(--accent-500)",
+          }}
+          aria-label="Toggle theme"
+        >
+          <Sun
+            className={`sun-icon w-4 h-4 ml-1 transition-opacity duration-300 ${
+              theme === "light" ? "opacity-100 text-white" : "opacity-50 text-gray-400"
+            }`}
+          />
+
+          <Moon
+            className={`moon-icon w-4 h-4 mr-1 transition-opacity duration-300 ${
+              theme === "dark" ? "opacity-100 text-white" : "opacity-50 text-gray-400"
+            }`}
+          />
+
+          <div
+            className="absolute w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300"
+            style={{
+              transform: theme === "dark" ? "translateX(2px)" : "translateX(34px)",
+            }}
+          />
+        </button>
       </div>
     </header>
   )

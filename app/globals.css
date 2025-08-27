@@ -290,6 +290,18 @@ html[data-theme="light"] .chat-theme-toggle::after {
   transform: translateX(22px);
 }
 
+/* Theme toggle container styling - outline like profile when in dark mode */
+.theme-toggle {
+  position: relative;
+}
+
+/* Theme toggle container gets profile-like border in dark mode */
+.theme-toggle[data-theme="dark"] {
+  border: 1px solid var(--line-600) !important;
+  background: color-mix(in srgb, var(--bg-850), #000 6%) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
 .chat-usercard {
   display: flex;
   align-items: center;
@@ -354,7 +366,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   bottom: 0;
   background: linear-gradient(180deg, var(--bg-850), var(--bg-900));
   border-top: 1px solid var(--line-400);
-  padding: .8rem;
+  padding: .8rem min(0.5rem, 1vw);
 }
 
 @media (max-width: 1024px) {
@@ -446,19 +458,18 @@ html[data-theme="light"] .chat-theme-toggle::after {
   color: var(--text-300);
   cursor: pointer;
   padding: 0.25rem;
-}
-
-.chat-burger {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.chat-burger span {
-  width: 12px;
-  height: 2px;
-  background: currentColor;
   transition: all 0.2s ease;
+}
+
+.chat-collapse-btn:hover {
+  background: var(--line-100);
+  color: var(--text-200);
+}
+
+.chat-collapse-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .chat-list {
@@ -476,7 +487,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   background: var(--bg-800);
   cursor: pointer;
   transition: all 0.2s ease;
-  border-radius: 0; /* Sharp corners */
+  border-radius: 3px; /* Sharp corners */
   margin-bottom: 0.5rem; /* Added spacing between items */
 }
 
@@ -496,6 +507,15 @@ html[data-theme="light"] .chat-theme-toggle::after {
 }
 
 .chat-item[aria-current="page"] svg {
+  color: var(--accent-500);
+}
+
+.chat-item-active {
+  background: var(--bg-700);
+  border-color: var(--accent-500);
+}
+
+.chat-item-active svg {
   color: var(--accent-500);
 }
 
@@ -545,7 +565,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
 
 .chat-conversation::-webkit-scrollbar-thumb {
   background: var(--accent-500);
-  border-radius: 4px;
+  border-radius: 3px;
   opacity: 0.7;
   transition: opacity 0.2s ease, background-color 0.2s ease;
 }
@@ -584,7 +604,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   justify-content: center;
   background: var(--bg-700);
   border: 1px solid var(--line-500); /* Reduced from 2px to 1px */
-  border-radius: 0; /* Sharp corners for avatars */
+  border-radius: 3px; /* Sharp corners for avatars */
   color: var(--text-200);
   margin-top: 0.25rem; /* Slight offset to align with message content */
 }
@@ -622,6 +642,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   color: var(--text-200);
   font-style: italic;
   background: var(--bg-850);
+  border-radius: 3px;
 }
 
 .chat-message-body {
@@ -629,6 +650,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   border: 1px solid var(--line-500); /* Reduced from 3px to 1px */
   /* Replaced diagonal striped background with subtle light gray for better text readability */
   background: color-mix(in srgb, var(--bg-850), #000 2%);
+  border-radius: 3px;
 }
 
 .chat-message--assistant .chat-message-body {
@@ -637,6 +659,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   border-top: 1px solid var(--line-500); /* Reduced from 3px to 1px */
   border-right: 1px solid var(--line-500); /* Reduced from 3px to 1px */
   border-bottom: 1px solid var(--line-500); /* Reduced from 3px to 1px */
+  border-radius: 3px;
 }
 
 /* Chat Code Blocks */
@@ -718,6 +741,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  border-radius: 3px;
 }
 
 .chat-btn:hover {
@@ -779,21 +803,49 @@ html[data-theme="light"] .chat-theme-toggle::after {
   bottom: 0;
   background: linear-gradient(180deg, var(--bg-850), var(--bg-900));
   border-top: 1px solid var(--line-400); /* Reduced from 3px to 1px */
-  padding: .8rem;
+  padding: .8rem clamp(1rem, 2vw, 1.25rem);
 }
 
 .chat-prompt {
   display: flex;
   gap: .6rem;
   align-items: flex-end;
-  max-width: 1200px;
+  max-width: min(1200px, calc(100vw - 2rem));
   margin: 0 auto;
+}
+
+/* Specific rules for chat shell layout */
+.chat-shell .chat-prompt {
+  max-width: min(1200px, calc(100vw - 3rem));
+}
+
+.chat-shell .chat-main .chat-prompt {
+  max-width: calc(100% - 1rem);
+}
+
+/* Force full-width on mobile for better usability */
+@media (max-width: 480px) {
+  .chat-prompt {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0.25rem;
+  }
+  .chat-shell .chat-prompt,
+  .chat-shell .chat-main .chat-prompt {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .chat-prompt-dock {
+    padding: .8rem 0.25rem;
+  }
 }
 
 /* Restore concise input container and send button layout */
 .chat-input-container {
   flex: 1;
   position: relative;
+  min-width: 0;
+  width: 100%;
 }
 
 .chat-prompt textarea {
@@ -824,6 +876,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   align-items: center;
   justify-content: center;
   transition: all .18s ease;
+  border-radius: 3px;
 }
 
 .chat-send-btn:hover:not(:disabled) {
@@ -852,13 +905,192 @@ html[data-theme="light"] .chat-theme-toggle::after {
   transform: rotate(15deg);
 }
 
-/* Collapsed sidebar tweaks */
-.chat-shell.is-collapsed .chat-label {
+/* Collapsed sidebar - Balanced approach */
+.chat-shell.is-collapsed {
+  grid-template-columns: 80px 1fr;
+}
+
+/* Collapsed sidebar - center content properly with tight spacing */
+.chat-shell.is-collapsed .chat-aside {
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  overflow: hidden;
+  padding: 0.5rem; /* Consistent padding for all sides */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  gap: 0; /* Remove any default gap between sections */
+}
+
+/* Hide text elements in collapsed state */
+.chat-shell.is-collapsed .chat-aside .chat-label,
+.chat-shell.is-collapsed .chat-aside .chat-txt,
+.chat-shell.is-collapsed .chat-aside .chat-meta,
+.chat-shell.is-collapsed .chat-aside h3,
+.chat-shell.is-collapsed .chat-aside span:not(.svg *) {
   display: none;
 }
 
-.chat-shell.is-collapsed .chat-aside {
-  width: 70px;
+/* Chat items in collapsed state - closer spacing like bottom icons */
+.chat-shell.is-collapsed .chat-item {
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0.25rem; /* Reduced spacing to match bottom icons */
+  width: 44px; /* Smaller square width to fit sidebar */
+  height: 44px; /* Smaller square height to fit sidebar */
+  min-height: 44px;
+  max-height: 44px;
+  min-width: 44px;
+  max-width: 44px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  background: var(--bg-800);
+  border: 1px solid var(--line-500);
+}
+
+.chat-shell.is-collapsed .chat-item:hover {
+  background: var(--line-100);
+  border-color: var(--accent-300);
+}
+
+/* Icon sizing in collapsed state - smaller and centered */
+.chat-shell.is-collapsed .chat-item svg {
+  width: 18px; /* Slightly smaller icon for better fit */
+  height: 18px; /* Slightly smaller icon for better fit */
+  min-width: 18px;
+  min-height: 18px;
+  flex-shrink: 0;
+}
+
+/* All sections in collapsed state except last - consistent tight spacing */
+.chat-shell.is-collapsed .chat-section:not(:last-child) {
+  margin-top: 0 !important; /* Override any inline styles */
+  margin-bottom: 0 !important; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+/* Hide non-essential sections and center the visible ones with consistent spacing */
+.chat-shell.is-collapsed .chat-aside .chat-section:nth-child(2),
+.chat-shell.is-collapsed .chat-aside .chat-section:nth-child(3) {
+  display: flex; /* Keep Jejak Artifact and Riwayat visible */
+  flex-direction: column;
+  align-items: center; /* Center content */
+  width: 100%;
+  margin-top: 0 !important; /* Override inline style margin for consistent spacing */
+}
+
+/* Hide detail items in collapsed state, show only summary icons */
+.chat-shell.is-collapsed .chat-detail-item {
+  display: none;
+}
+
+/* Summary icons - hidden in expand state */
+.chat-section-summary {
+  display: none;
+}
+
+/* Summary icons in collapsed state - closer spacing like bottom icons */
+.chat-shell.is-collapsed .chat-section-summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0.25rem; /* Reduced to match bottom icon spacing */
+  width: 44px; /* Smaller to fit collapsed sidebar */
+  height: 44px; /* Smaller to fit collapsed sidebar */
+  min-height: 44px;
+  max-height: 44px;
+  min-width: 44px;
+  max-width: 44px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  background: var(--bg-800);
+  border: 1px solid var(--line-500);
+}
+
+.chat-shell.is-collapsed .chat-section-summary:hover {
+  background: var(--line-100);
+  border-color: var(--accent-300);
+}
+
+.chat-shell.is-collapsed .chat-section-summary svg {
+  width: 18px; /* Smaller icon for better fit */
+  height: 18px; /* Smaller icon for better fit */
+  min-width: 18px;
+  min-height: 18px;
+  flex-shrink: 0;
+}
+
+/* Keep bottom section at bottom with proper centering but consistent spacing */
+.chat-shell.is-collapsed .chat-aside .chat-section:last-child {
+  margin-top: auto; /* Keep at bottom */
+  padding-top: 0; /* Remove extra padding */
+  margin-bottom: 0; /* Consistent with other sections */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content */
+}
+
+/* Flexbox layout preservation with proper centering and no gaps */
+.chat-shell.is-collapsed .chat-aside-scroll {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-right: 0;
+  align-items: center; /* Center all children horizontally */
+  width: 100%;
+  gap: 0; /* Remove any default gap */
+}
+
+/* Center the collapse button with closer spacing */
+.chat-shell.is-collapsed .chat-section-head {
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 0.25rem; /* Reduced to match consistent close spacing */
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.chat-shell.is-collapsed .chat-collapse-btn {
+  margin: 0 auto;
+  width: 44px; /* Smaller to fit collapsed sidebar */
+  height: 44px; /* Smaller to fit collapsed sidebar */
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background: var(--bg-800); /* Same background as other icons */
+  border: 1px solid var(--line-500); /* Same border as other icons */
+  color: var(--text-300);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0.25rem; /* Reduced to match close spacing of bottom icons */
+}
+
+.chat-shell.is-collapsed .chat-collapse-btn:hover {
+  background: var(--line-100);
+  color: var(--text-200);
+  border-color: var(--accent-300);
+}
+
+.chat-shell.is-collapsed .chat-collapse-btn svg {
+  width: 18px; /* Smaller icon for better fit */
+  height: 18px; /* Smaller icon for better fit */
+  min-width: 18px;
+  min-height: 18px;
+  flex-shrink: 0;
 }
 
 /* Welcome screen styles for initial chat state */
@@ -906,9 +1138,46 @@ html[data-theme="light"] .chat-theme-toggle::after {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .chat-prompt {
+    max-width: calc(100vw - 1rem);
+  }
+  .chat-shell .chat-prompt {
+    max-width: calc(100vw - 1rem);
+  }
+  .chat-shell .chat-main .chat-prompt {
+    max-width: calc(100% - 0.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-prompt {
+    flex-direction: column;
+    max-width: calc(100vw - clamp(0.5rem, 2vw, 1rem));
+    margin: 0;
+  }
+  .chat-btn {
+    width: 100%;
+  }
+  .chat-prompt-dock {
+    padding: .8rem clamp(0.5rem, 2vw, 1rem);
+  }
+  .chat-conversation {
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.5rem, 2vw, 1rem);
+  }
+  .chat-shell .chat-prompt {
+    max-width: calc(100vw - clamp(0.5rem, 2vw, 1rem));
+  }
+  .chat-shell .chat-main .chat-prompt {
+    max-width: calc(100% - clamp(0.5rem, 2vw, 1rem));
+  }
+}
+
 @media (max-width: 720px) {
   .chat-prompt {
     flex-direction: column;
+    max-width: calc(100vw - 0.5rem);
+    margin: 0;
   }
   .chat-btn {
     width: 100%;
@@ -921,7 +1190,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   margin: 1rem 0;
   border: 1px solid var(--line-500); /* Reduced from 3px to 1px */
   background: var(--bg-800);
-  border-radius: 0; /* Sharp corners */
+  border-radius: 3px; /* Sharp corners */
 }
 
 .chat-artifact-header {
@@ -961,7 +1230,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   margin: 1rem 0;
   border: 1px solid var(--accent-500); /* Reduced from 3px to 1px */
   background: var(--bg-800);
-  border-radius: 0; /* Sharp corners */
+  border-radius: 3px; /* Sharp corners */
 }
 
 .chat-gate-header {
@@ -1032,7 +1301,7 @@ html[data-theme="light"] .chat-theme-toggle::after {
   line-height: 1.5;
   resize: vertical;
   outline: none;
-  border-radius: 0;
+  border-radius: 3px;
   font-family: var(--font-sans);
 }
 

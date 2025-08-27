@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Target, Lightbulb, Award, BookOpen, Zap, Mail, Briefcase } from "lucide-react"
+import { Target, Lightbulb, Award, BookOpen, Zap, Mail, Briefcase, Users } from "lucide-react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import GlobalHeader from "@/components/global-header"
@@ -81,7 +81,7 @@ export default function TentangPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <Card
-              className="rounded-none p-8 border transition-all hover:-translate-y-1"
+              className="rounded-[3px] p-8 border transition-all hover:-translate-y-1"
               style={{
                 background:
                   theme === "light"
@@ -114,7 +114,7 @@ export default function TentangPage() {
             </Card>
 
             <Card
-              className="rounded-none p-8 border transition-all hover:-translate-y-1"
+              className="rounded-[3px] p-8 border transition-all hover:-translate-y-1"
               style={{
                 background:
                   theme === "light"
@@ -166,7 +166,7 @@ export default function TentangPage() {
               color: theme === "light" ? "var(--text-200)" : "var(--text-200)",
             }}
           >
-            MAKALAH AI menggunakan metodologi SOLC (Structured Outline Learning Cycle) yang membagi proses penulisan
+            MAKALAH AI menggunakan penggunaan metode structured outline learning cycle yang membagi proses penulisan
             menjadi 7 fase yang sistematis dan terukur.
           </p>
 
@@ -196,7 +196,7 @@ export default function TentangPage() {
             ].map((item, index) => (
               <Card
                 key={index}
-                className="rounded-none p-8 border transition-all hover:-translate-y-1"
+                className="rounded-[3px] p-8 border transition-all hover:-translate-y-1"
                 style={{
                   background:
                     theme === "light"
@@ -206,7 +206,7 @@ export default function TentangPage() {
                 }}
               >
                 <Badge
-                  className="rounded-none text-white text-xs font-medium px-3 py-1 mb-4"
+                  className="rounded-[3px] text-white text-xs font-medium px-3 py-1 mb-4"
                   style={{ backgroundColor: "var(--accent-500)" }}
                 >
                   {item.phase}
@@ -279,7 +279,7 @@ export default function TentangPage() {
             ].map((value, index) => (
               <Card
                 key={index}
-                className="rounded-none p-8 border transition-all hover:-translate-y-1"
+                className="rounded-[3px] p-8 border transition-all hover:-translate-y-1"
                 style={{
                   background:
                     theme === "light"
@@ -336,7 +336,7 @@ export default function TentangPage() {
           <div className="flex justify-center gap-4">
             <Link href="/chat">
               <Button
-                className="rounded-none text-white font-medium px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-105"
+                className="rounded-[3px] text-white font-medium px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-105"
                 style={{
                   backgroundColor: "var(--accent-500)",
                   background: "linear-gradient(135deg, var(--accent-400), var(--accent-600))",
@@ -347,7 +347,7 @@ export default function TentangPage() {
             </Link>
             <Link href="/docs">
               <Button
-                className="rounded-none text-white font-medium px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-105 border-2"
+                className="rounded-[3px] text-white font-medium px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-105 border-2"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "var(--accent-500)",
@@ -376,7 +376,7 @@ export default function TentangPage() {
             {/* Contact Section */}
             <Card
               id="hubungi-kami"
-              className="rounded-none p-8 border transition-all hover:-translate-y-1"
+              className="rounded-[3px] p-8 border transition-all hover:-translate-y-1"
               style={{
                 background:
                   theme === "light"
@@ -407,7 +407,7 @@ export default function TentangPage() {
               </p>
               <a href="mailto:contact@makalah.ai" target="_blank" rel="noopener noreferrer">
                 <Button
-                  className="rounded-none text-white font-medium px-6 py-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                  className="rounded-[3px] text-white font-medium px-6 py-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
                   style={{
                     backgroundColor: "var(--accent-500)",
                     background: "linear-gradient(135deg, var(--accent-400), var(--accent-600))",
@@ -422,7 +422,7 @@ export default function TentangPage() {
             {/* Career Section */}
             <Card
               id="bergabung-dengan-tim"
-              className="rounded-none p-8 border transition-all hover:-translate-y-1"
+              className="rounded-[3px] p-8 border transition-all hover:-translate-y-1"
               style={{
                 background:
                   theme === "light"

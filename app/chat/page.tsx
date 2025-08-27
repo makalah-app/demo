@@ -146,33 +146,25 @@ export default function ChatPage() {
                 <button
                   className="chat-collapse-btn"
                   onClick={() => setIsCollapsed(!isCollapsed)}
-                  aria-label="Sembunyikan sidebar"
+                  aria-label={isCollapsed ? "Tampilkan sidebar" : "Sembunyikan sidebar"}
+                  title={isCollapsed ? "Tampilkan sidebar" : "Sembunyikan sidebar"}
                 >
-                  <span className="chat-burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
+                  <svg width="18" height="18">
+                    <use href="#i-analytics" />
+                  </svg>
                 </button>
               </div>
               <div className="chat-list">
-                <div className="chat-item">
+                <div 
+                  className="chat-item chat-item-active"
+                  title={isCollapsed ? "Chat Baru" : ""}
+                  onClick={() => (window.location.href = "/chat-start")}
+                  style={{ cursor: "pointer" }}
+                >
                   <svg width="18" height="18">
                     <use href="#i-chat" />
                   </svg>
                   <span className="chat-label chat-txt">Chat Baru</span>
-                </div>
-                <div className="chat-item">
-                  <svg width="18" height="18">
-                    <use href="#i-flask" />
-                  </svg>
-                  <span className="chat-label chat-txt">Penelitian Ekonomi Digital</span>
-                </div>
-                <div className="chat-item">
-                  <svg width="18" height="18">
-                    <use href="#i-analytics" />
-                  </svg>
-                  <span className="chat-label chat-txt">Analisis Kebijakan Publik</span>
                 </div>
               </div>
             </section>
@@ -180,7 +172,18 @@ export default function ChatPage() {
             <section className="chat-section" style={{ marginTop: "2rem" }}>
               <h3>Jejak Artifact</h3>
               <div className="chat-list">
-                <div className="chat-item" style={{ padding: "0.75rem" }}>
+                {/* Summary icon for collapsed state */}
+                <div 
+                  className="chat-item chat-section-summary"
+                  title={isCollapsed ? "Jejak Artifact" : ""}
+                >
+                  <svg width="18" height="18">
+                    <use href="#i-doc" />
+                  </svg>
+                  <span className="chat-label chat-txt">Jejak Artifact</span>
+                </div>
+                {/* Individual artifacts - hidden in collapsed */}
+                <div className="chat-item chat-detail-item" style={{ padding: "0.75rem" }}>
                   <svg width="18" height="18">
                     <use href="#i-doc" />
                   </svg>
@@ -189,7 +192,7 @@ export default function ChatPage() {
                     <div className="chat-meta">2 hari yang lalu • v2</div>
                   </div>
                 </div>
-                <div className="chat-item" style={{ padding: "0.75rem" }}>
+                <div className="chat-item chat-detail-item" style={{ padding: "0.75rem" }}>
                   <svg width="18" height="18">
                     <use href="#i-doc" />
                   </svg>
@@ -204,7 +207,18 @@ export default function ChatPage() {
             <section className="chat-section" style={{ marginTop: "2rem" }}>
               <h3>Riwayat</h3>
               <div className="chat-list">
-                <div className="chat-item" style={{ padding: "0.75rem" }}>
+                {/* Summary icon for collapsed state */}
+                <div 
+                  className="chat-item chat-section-summary"
+                  title={isCollapsed ? "Riwayat" : ""}
+                >
+                  <svg width="18" height="18">
+                    <use href="#i-eye" />
+                  </svg>
+                  <span className="chat-label chat-txt">Riwayat</span>
+                </div>
+                {/* Individual history items - hidden in collapsed */}
+                <div className="chat-item chat-detail-item" style={{ padding: "0.75rem" }}>
                   <svg width="18" height="18">
                     <use href="#i-chat" />
                   </svg>
@@ -213,7 +227,7 @@ export default function ChatPage() {
                     <div className="chat-meta">3 hari yang lalu</div>
                   </div>
                 </div>
-                <div className="chat-item" style={{ padding: "0.75rem" }}>
+                <div className="chat-item chat-detail-item" style={{ padding: "0.75rem" }}>
                   <svg width="18" height="18">
                     <use href="#i-chat" />
                   </svg>
@@ -222,7 +236,7 @@ export default function ChatPage() {
                     <div className="chat-meta">1 minggu yang lalu</div>
                   </div>
                 </div>
-                <div className="chat-item" style={{ padding: "0.75rem" }}>
+                <div className="chat-item chat-detail-item" style={{ padding: "0.75rem" }}>
                   <svg width="18" height="18">
                     <use href="#i-chat" />
                   </svg>
@@ -241,13 +255,19 @@ export default function ChatPage() {
                   className="chat-item"
                   onClick={() => (window.location.href = "/settings")}
                   style={{ cursor: "pointer" }}
+                  title={isCollapsed ? "Pengaturan" : ""}
                 >
                   <svg width="18" height="18">
                     <use href="#i-gear" />
                   </svg>
                   <span className="chat-label chat-txt">Pengaturan</span>
                 </div>
-                <div className="chat-item" onClick={() => (window.location.href = "/")} style={{ cursor: "pointer" }}>
+                <div 
+                  className="chat-item" 
+                  onClick={() => (window.location.href = "/")} 
+                  style={{ cursor: "pointer" }}
+                  title={isCollapsed ? "Logout" : ""}
+                >
                   <svg width="18" height="18">
                     <use href="#i-exit" />
                   </svg>
