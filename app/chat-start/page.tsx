@@ -24,7 +24,7 @@ export default function ChatStartPage() {
     if (!inputValue.trim()) return
 
     // Redirect to main chat page when user starts conversation
-    router.push("/chat")
+    router.push("/demo/chat")
   }
 
   const handleExampleClick = (example: string) => {

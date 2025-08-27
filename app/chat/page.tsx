@@ -158,7 +158,7 @@ export default function ChatPage() {
                 <div 
                   className="chat-item chat-item-active"
                   title={isCollapsed ? "Chat Baru" : ""}
-                  onClick={() => (window.location.href = "/chat-start")}
+                  onClick={() => (window.location.href = "/demo/chat-start")}
                   style={{ cursor: "pointer" }}
                 >
                   <svg width="18" height="18">

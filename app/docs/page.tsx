@@ -571,7 +571,7 @@ export default function DokumentasiPage() {
                   <Button
                     variant="outline"
                     className="border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white"
-                    onClick={() => window.location.href = "/chat"}
+                    onClick={() => window.location.href = "/demo/chat"}
                   >
                     Chat Support
                   </Button>
