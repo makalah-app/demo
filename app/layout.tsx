@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Makalah AI – Industrial Academic Writing Platform",
+  title: "Makalah AI - Kawan Cerdas Akademia",
   description: "Platform kolaborasi penulisan makalah akademik berbasis AI dengan 7 fase terstruktur",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
