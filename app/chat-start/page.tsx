@@ -153,7 +153,7 @@ export default function ChatStartPage() {
               <div className="chat-list">
                 <div
                   className="chat-item"
-                  onClick={() => (window.location.href = "/settings")}
+                  onClick={() => (window.location.href = "/demo/settings")}
                   style={{ cursor: "pointer" }}
                 >
                   <svg width="18" height="18">
@@ -161,7 +161,7 @@ export default function ChatStartPage() {
                   </svg>
                   <span className="chat-label chat-txt">Pengaturan</span>
                 </div>
-                <div className="chat-item" onClick={() => (window.location.href = "/")} style={{ cursor: "pointer" }}>
+                <div className="chat-item" onClick={() => (window.location.href = "/demo")} style={{ cursor: "pointer" }}>
                   <svg width="18" height="18">
                     <use href="#i-exit" />
                   </svg>

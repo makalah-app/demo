@@ -253,7 +253,7 @@ export default function ChatPage() {
               <div className="chat-list">
                 <div
                   className="chat-item"
-                  onClick={() => (window.location.href = "/settings")}
+                  onClick={() => (window.location.href = "/demo/settings")}
                   style={{ cursor: "pointer" }}
                   title={isCollapsed ? "Pengaturan" : ""}
                 >
@@ -264,7 +264,7 @@ export default function ChatPage() {
                 </div>
                 <div 
                   className="chat-item" 
-                  onClick={() => (window.location.href = "/")} 
+                  onClick={() => (window.location.href = "/demo")} 
                   style={{ cursor: "pointer" }}
                   title={isCollapsed ? "Logout" : ""}
                 >

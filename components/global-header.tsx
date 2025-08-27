@@ -42,7 +42,7 @@ const GlobalHeader = ({ showNavigation = false, showUserProfile = false, customN
   }
 
   const handleLogout = () => {
-    window.location.href = "/"
+    window.location.href = "/demo"
     setIsDropdownOpen(false)
   }
 
@@ -136,10 +136,10 @@ const GlobalHeader = ({ showNavigation = false, showUserProfile = false, customN
               title="Profil"
             >
               <div className="chat-avatar" aria-hidden="true">
-                EP
+                U
               </div>
               <div className="chat-user-meta">
-                <span className="chat-user-name">Erik Supit</span>
+                <span className="chat-user-name">User</span>
                 <span className="chat-user-role">Peneliti</span>
               </div>
               <ChevronDown
@@ -157,7 +157,7 @@ const GlobalHeader = ({ showNavigation = false, showUserProfile = false, customN
                 }}
               >
                 <Link
-                  href="/settings"
+                  href="/demo/settings"
                   className="flex items-center px-4 py-2 text-sm transition-colors duration-200"
                   style={{
                     color: theme === "light" ? "#0f172a" : "#e6edf5",

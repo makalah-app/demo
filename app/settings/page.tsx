@@ -17,8 +17,8 @@ export default function SettingsPage() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const [profileData, setProfileData] = useState({
-    name: "Erik Supit",
-    email: "erik.supit@example.com",
+    name: "User",
+    email: "user@example.com",
     role: "Peneliti",
   })
 
